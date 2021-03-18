@@ -5,7 +5,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const app = express_1.default();
+const user = require("./routes/user");
+const add = (num1, num2) => {
+    return num1 + num2;
+};
 app.get("/", (req, res) => {
-    res.send("node1");
+    console.log(add(1, 3));
+    res.send("hello");
 });
-app.listen(5000, () => console.log("5000node current"));
+app.use("/user", user);
+app.listen(5000, () => console.log("Running on 5000"));
