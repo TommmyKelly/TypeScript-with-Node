@@ -7,8 +7,14 @@ const add = (num1: number, num2: number): number => {
   return num1 + num2;
 };
 
-app.get("/", (req: Request, res: Response) => {
-  console.log(add(1, 3));
+interface Props {
+  name: string;
+  email: string;
+}
+
+app.get("/:id", (req: Request, res: Response) => {
+  console.log(req.params.id);
+
   res.send("hello");
 });
 

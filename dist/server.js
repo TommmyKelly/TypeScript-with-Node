@@ -9,8 +9,8 @@ const user = require("./routes/user");
 const add = (num1, num2) => {
     return num1 + num2;
 };
-app.get("/", (req, res) => {
-    console.log(add(1, 3));
+app.get("/:id", (req, res) => {
+    console.log(req.params.id);
     res.send("hello");
 });
 app.use("/user", user);
